@@ -67,6 +67,13 @@
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
       <div><h1><span class="kind-class">GameBot</span> class </h1></div>
 
+    <section class="desc markdown">
+      <p>This is the main class where you can build your bot
+documentation:
+<a href="https://filoruxonline.github.io/plutopoly-bot-doc/index.html">https://filoruxonline.github.io/plutopoly-bot-doc/index.html</a>
+the data object
+<a href="https://filoruxonline.github.io/plutopoly-bot-doc/engine_data_main/GameData-class.html">https://filoruxonline.github.io/plutopoly-bot-doc/engine_data_main/GameData-class.html</a></p>
+    </section>
     
     <section>
       <dl class="dl-horizontal">
@@ -97,10 +104,18 @@
       </dl>
     </section>
 
-    <section class="summary offset-anchor inherited" id="instance-properties">
+    <section class="summary offset-anchor" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="raiseFactor" class="property">
+          <span class="name"><a href="main/GameBot/raiseFactor.html">raiseFactor</a></span>
+          <span class="signature">&#8596; double</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read / write</div>
+</dd>
         <dt id="hashCode" class="property inherited">
           <span class="name"><a href="helper_game_listener/GameListener/hashCode.html">hashCode</a></span>
           <span class="signature">&#8594; int</span>         
@@ -123,14 +138,42 @@
     <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
+        <dt id="onInit" class="callable">
+          <span class="name"><a href="main/GameBot/onInit.html">onInit</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd>
+          These are other events you can listen to.
+gets called when the bot initializes
+                  <div class="features">override</div>
+</dd>
         <dt id="onNewTurn" class="callable">
           <span class="name"><a href="main/GameBot/onNewTurn.html">onNewTurn</a></span><span class="signature">(<wbr>)
             <span class="returntype parameter">&#8594; dynamic</span>
           </span>
                   </dt>
         <dd>
-          
+          onNewTurn gets called when all players have played 1 round.
                   <div class="features">override</div>
+</dd>
+        <dt id="onUpdate" class="callable">
+          <span class="name"><a href="main/GameBot/onUpdate.html">onUpdate</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd>
+          low-level, gets called when new data is received.
+                  <div class="features">override</div>
+</dd>
+        <dt id="raisePrice" class="callable">
+          <span class="name"><a href="main/GameBot/raisePrice.html">raisePrice</a></span><span class="signature">(<wbr><span class="parameter" id="raisePrice-param-tile"><span class="type-annotation"><a href="engine_data_map/Tile-class.html">Tile</a></span> <span class="parameter-name">tile</span></span>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd>
+          
+                  
 </dd>
         <dt id="noSuchMethod" class="callable inherited">
           <span class="name"><a href="helper_game_listener/GameListener/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
@@ -141,22 +184,13 @@
           Invoked when a non-existent method or property is accessed. <a href="helper_game_listener/GameListener/noSuchMethod.html">[...]</a>
                   <div class="features">inherited</div>
 </dd>
-        <dt id="onPassTile" class="callable inherited">
-          <span class="name"><a href="helper_game_listener/GameListener/onPassTile.html">onPassTile</a></span><span class="signature">(<wbr>)
+        <dt id="onNextPlayer" class="callable inherited">
+          <span class="name"><a href="helper_game_listener/GameListener/onNextPlayer.html">onNextPlayer</a></span><span class="signature">(<wbr>)
             <span class="returntype parameter">&#8594; dynamic</span>
           </span>
                   </dt>
         <dd class="inherited">
-          
-                  <div class="features">inherited</div>
-</dd>
-        <dt id="onUpdate" class="callable inherited">
-          <span class="name"><a href="helper_game_listener/GameListener/onUpdate.html">onUpdate</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; dynamic</span>
-          </span>
-                  </dt>
-        <dd class="inherited">
-          
+          When the next player has moved
                   <div class="features">inherited</div>
 </dd>
         <dt id="toString" class="callable inherited">
@@ -197,17 +231,20 @@
       <li class="section-title"><a href="main/GameBot-class.html#constructors">Constructors</a></li>
       <li><a href="main/GameBot/GameBot.html">GameBot</a></li>
     
-      <li class="section-title inherited">
+      <li class="section-title">
         <a href="main/GameBot-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="main/GameBot/raiseFactor.html">raiseFactor</a></li>
       <li class="inherited"><a href="helper_game_listener/GameListener/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="helper_game_listener/GameListener/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="main/GameBot-class.html#instance-methods">Methods</a></li>
+      <li><a href="main/GameBot/onInit.html">onInit</a></li>
       <li><a href="main/GameBot/onNewTurn.html">onNewTurn</a></li>
+      <li><a href="main/GameBot/onUpdate.html">onUpdate</a></li>
+      <li><a href="main/GameBot/raisePrice.html">raisePrice</a></li>
       <li class="inherited"><a href="helper_game_listener/GameListener/noSuchMethod.html">noSuchMethod</a></li>
-      <li class="inherited"><a href="helper_game_listener/GameListener/onPassTile.html">onPassTile</a></li>
-      <li class="inherited"><a href="helper_game_listener/GameListener/onUpdate.html">onUpdate</a></li>
+      <li class="inherited"><a href="helper_game_listener/GameListener/onNextPlayer.html">onNextPlayer</a></li>
       <li class="inherited"><a href="helper_game_listener/GameListener/toString.html">toString</a></li>
     
       <li class="section-title inherited"><a href="main/GameBot-class.html#operators">Operators</a></li>

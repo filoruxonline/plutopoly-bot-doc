@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the initBot method from the InitHelper class, for the Dart programming language.">
+  <title>initBot method - InitHelper class - init_bot library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">PlutopolyExtension</a></li>
+    <li><a href="helper_init_bot/helper_init_bot-library.html">init_bot</a></li>
+    <li><a href="helper_init_bot/InitHelper-class.html">InitHelper</a></li>
+    <li class="self-crumb">initBot method</li>
+  </ol>
+  <div class="self-name">initBot</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">PlutopolyExtension</a></li>
+      <li><a href="helper_init_bot/helper_init_bot-library.html">init_bot</a></li>
+      <li><a href="helper_init_bot/InitHelper-class.html">InitHelper</a></li>
+      <li class="self-crumb">initBot method</li>
+    </ol>
+    
+    <h5>InitHelper class</h5>
+    <ol>
+    
+        <li class="section-title"><a href="helper_init_bot/InitHelper-class.html#constructors">Constructors</a></li>
+        <li><a href="helper_init_bot/InitHelper/InitHelper.html">InitHelper</a></li>
+    
+        <li class="section-title inherited">
+            <a href="helper_init_bot/InitHelper-class.html#instance-properties">Properties</a>
+        </li>
+        <li class="inherited"><a href="helper_init_bot/InitHelper/hashCode.html">hashCode</a></li>
+        <li class="inherited"><a href="helper_init_bot/InitHelper/runtimeType.html">runtimeType</a></li>
+    
+        <li class="section-title inherited"><a href="helper_init_bot/InitHelper-class.html#instance-methods">Methods</a></li>
+        <li class="inherited"><a href="helper_init_bot/InitHelper/noSuchMethod.html">noSuchMethod</a></li>
+        <li class="inherited"><a href="helper_init_bot/InitHelper/toString.html">toString</a></li>
+    
+        <li class="section-title inherited"><a href="helper_init_bot/InitHelper-class.html#operators">Operators</a></li>
+        <li class="inherited"><a href="helper_init_bot/InitHelper/operator_equals.html">operator ==</a></li>
+    
+    
+        <li class="section-title"><a href="helper_init_bot/InitHelper-class.html#static-methods">Static methods</a></li>
+        <li><a href="helper_init_bot/InitHelper/checkMetaData.html">checkMetaData</a></li>
+        <li><a href="helper_init_bot/InitHelper/initBot.html">initBot</a></li>
+    
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1><span class="kind-method">initBot</span> method</h1></div>
+
+    <section class="multi-line-signature">
+      <span class="returntype">Future</span>
+            <span class="name ">initBot</span>
+(<wbr><span class="parameter" id="initBot-param-inGamePin"><span class="type-annotation">String</span> <span class="parameter-name">inGamePin</span>, </span> <span class="parameter" id="initBot-param-inVerbose"><span class="type-annotation">bool</span> <span class="parameter-name">inVerbose</span>, </span> <span class="parameter" id="initBot-param-meta"><span class="type-annotation">Map<span class="signature">&lt;<wbr><span class="type-parameter">String</span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">meta</span></span>)
+      
+    </section>
+    
+    <section class="summary source-code" id="source">
+      <h2><span>Implementation</span></h2>
+      <pre class="language-dart"><code class="language-dart">static initBot(
+    String inGamePin, bool inVerbose, Map&lt;String, dynamic&gt; meta) async {
+  Game.gameBot = GameBot();
+
+  meta = checkMetaData(meta);
+  if (inGamePin == null) {
+    print(&quot;Please enter key:&quot;);
+    inGamePin =
+        stdin.readLineSync(encoding: Encoding.getByName(&#39;utf-8&#39;)).trim();
+  }
+
+  Game.botData = {&quot;meta&quot;: meta};
+
+  Game.verbose = inVerbose;
+  if (inGamePin == null) {
+    print(&quot;Please enter a GAMEPIN in main.dart&quot;);
+    return;
+  }
+  Game.gamePin = inGamePin;
+  try {
+    Firestore.initialize(&quot;playplutopoly&quot;);
+  } catch (e) {
+    print(&quot;ERROR during initialization&quot;);
+    rethrow;
+  }
+  try {
+    DocumentReference documentReference =
+        Firestore.instance.document(&quot;games&#47;${Game.gamePin}&quot;);
+    if (meta[&quot;listen&quot;] ?? true) {
+      documentReference.stream.listen(Helper.update, onDone: () {
+        print(&quot;== Stream ended ==&quot;);
+      });
+    } else {
+      if (Game.verbose)
+        print(&quot;Meta listen value was false, not listening to data.&quot;);
+    }
+    Document document = await documentReference.get();
+    try {
+      JsonEncoder encoder = new JsonEncoder.withIndent(&#39;  &#39;);
+      String prettyprint = encoder.convert(document.map);
+      if (Game.verbose) print(prettyprint);
+    } catch (e) {
+      if (Game.verbose) print(&quot;Couldn&#39;t pretty print.&quot;);
+    }
+    try {
+      Game.data = GameData.fromJson(document.map);
+    } catch (e) {
+      print(
+          &quot;Couldn&#39;t serialize data. Is the json formatted correctly? Are the versions correct?&quot;);
+      rethrow;
+    }
+  } catch (e) {
+    print(&quot;ERROR during connection: Is your gamepin correct?&quot;);
+    rethrow;
+  }
+
+  Game.gameBot.onInit();
+  Helper.saveGame();
+}</code></pre>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    PlutopolyExtension
+      0.0.0-unknown
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>

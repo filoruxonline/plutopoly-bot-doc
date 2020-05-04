@@ -57,17 +57,20 @@
         <li class="section-title"><a href="main/GameBot-class.html#constructors">Constructors</a></li>
         <li><a href="main/GameBot/GameBot.html">GameBot</a></li>
     
-        <li class="section-title inherited">
+        <li class="section-title">
             <a href="main/GameBot-class.html#instance-properties">Properties</a>
         </li>
+        <li><a href="main/GameBot/raiseFactor.html">raiseFactor</a></li>
         <li class="inherited"><a href="helper_game_listener/GameListener/hashCode.html">hashCode</a></li>
         <li class="inherited"><a href="helper_game_listener/GameListener/runtimeType.html">runtimeType</a></li>
     
         <li class="section-title"><a href="main/GameBot-class.html#instance-methods">Methods</a></li>
+        <li><a href="main/GameBot/onInit.html">onInit</a></li>
         <li><a href="main/GameBot/onNewTurn.html">onNewTurn</a></li>
+        <li><a href="main/GameBot/onUpdate.html">onUpdate</a></li>
+        <li><a href="main/GameBot/raisePrice.html">raisePrice</a></li>
         <li class="inherited"><a href="helper_game_listener/GameListener/noSuchMethod.html">noSuchMethod</a></li>
-        <li class="inherited"><a href="helper_game_listener/GameListener/onPassTile.html">onPassTile</a></li>
-        <li class="inherited"><a href="helper_game_listener/GameListener/onUpdate.html">onUpdate</a></li>
+        <li class="inherited"><a href="helper_game_listener/GameListener/onNextPlayer.html">onNextPlayer</a></li>
         <li class="inherited"><a href="helper_game_listener/GameListener/toString.html">toString</a></li>
     
         <li class="section-title inherited"><a href="main/GameBot-class.html#operators">Operators</a></li>
@@ -94,15 +97,20 @@
 (<wbr>)
       <div class="features">override</div>
     </section>
+    <section class="desc markdown">
+      <p>onNewTurn gets called when all players have played 1 round.</p>
+    </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">@override
 onNewTurn() {
-  print(&quot;onNewTurn&quot;);
+  &#47;&#47; This is an example project:
+  &#47;&#47; every turn all the tile prices raise by 5%.
   Game.data.gmap.forEach((Tile tile) {
-    tile.price = (tile.price * 1.05).floor();
+    raisePrice(tile);
   });
+  &#47;&#47; run Game.save() if you have changed data.
   Game.save();
 }</code></pre>
     </section>

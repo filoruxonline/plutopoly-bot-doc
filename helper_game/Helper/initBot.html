@@ -27,7 +27,7 @@
     <li><a href="index.html">PlutopolyExtension</a></li>
     <li><a href="helper_game/helper_game-library.html">game</a></li>
     <li><a href="helper_game/Helper-class.html">Helper</a></li>
-    <li class="self-crumb">initBot method</li>
+    <li class="self-crumb"><span class="deprecated">initBot</span> method</li>
   </ol>
   <div class="self-name">initBot</div>
   <form class="search navbar-right" role="search">
@@ -48,7 +48,7 @@
       <li><a href="index.html">PlutopolyExtension</a></li>
       <li><a href="helper_game/helper_game-library.html">game</a></li>
       <li><a href="helper_game/Helper-class.html">Helper</a></li>
-      <li class="self-crumb">initBot method</li>
+      <li class="self-crumb"><span class="deprecated">initBot</span> method</li>
     </ol>
     
     <h5>Helper class</h5>
@@ -71,11 +71,13 @@
         <li class="inherited"><a href="helper_game/Helper/operator_equals.html">operator ==</a></li>
     
         <li class="section-title"><a href="helper_game/Helper-class.html#static-properties">Static properties</a></li>
+        <li><a href="helper_game/Helper/currentPlayer.html">currentPlayer</a></li>
         <li><a href="helper_game/Helper/turn.html">turn</a></li>
     
         <li class="section-title"><a href="helper_game/Helper-class.html#static-methods">Static methods</a></li>
-        <li><a href="helper_game/Helper/initBot.html">initBot</a></li>
+        <li><a class="deprecated" href="helper_game/Helper/initBot.html">initBot</a></li>
         <li><a href="helper_game/Helper/onUpdate.html">onUpdate</a></li>
+        <li><a href="helper_game/Helper/saveGame.html">saveGame</a></li>
         <li><a href="helper_game/Helper/update.html">update</a></li>
     
     
@@ -87,47 +89,24 @@
       <div><h1><span class="kind-method">initBot</span> method</h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype">Future</span>
-            <span class="name ">initBot</span>
-(<wbr><span class="parameter" id="initBot-param-inGamePin"><span class="type-annotation">String</span> <span class="parameter-name">inGamePin</span>, </span> <span class="parameter" id="initBot-param-inVerbose"><span class="type-annotation">bool</span> <span class="parameter-name">inVerbose</span></span>)
+      <div>
+        <ol class="annotation-list">
+          <li>@deprecated</li>
+        </ol>
+      </div>
+      <span class="returntype">dynamic</span>
+            <span class="name deprecated">initBot</span>
+(<wbr>)
       
+    </section>
+    <section class="desc markdown">
+      <p>Use InitHelper.initBot()</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">static initBot(String inGamePin, bool inVerbose) async {
-  Game.gameBot = GameBot();
-  Game.verbose = inVerbose;
-  if (inGamePin == null) {
-    print(&quot;Please enter a GAMEPIN in main.dart&quot;);
-    return;
-  }
-  Game.gamePin = inGamePin;
-  try {
-    Firestore.initialize(&quot;playplutopoly&quot;);
-  } catch (e) {
-    print(&quot;ERROR during initialization&quot;);
-    rethrow;
-  }
-  try {
-    DocumentReference documentReference =
-        Firestore.instance.document(&quot;games&#47;${Game.gamePin}&quot;);
-    documentReference.stream.listen(update, onDone: () {
-      print(&quot;== Stream ended ==&quot;);
-    });
-    try {
-      Document document = await documentReference.get();
-      JsonEncoder encoder = new JsonEncoder.withIndent(&#39;  &#39;);
-      String prettyprint = encoder.convert(document.map);
-      if (Game.verbose) print(prettyprint);
-    } catch (e) {
-      if (Game.verbose) print(&quot;Couldn&#39;t pretty print.&quot;);
-    }
-  } catch (e) {
-    print(&quot;ERROR during connection: Is your gamepin correct?&quot;);
-    rethrow;
-  }
-}</code></pre>
+      <pre class="language-dart"><code class="language-dart">@deprecated
+static initBot() {}</code></pre>
     </section>
 
   </div> <!-- /.main-content -->
