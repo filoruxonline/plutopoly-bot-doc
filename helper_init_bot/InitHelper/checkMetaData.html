@@ -94,29 +94,50 @@
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">static Map&lt;String, dynamic&gt; checkMetaData(Map&lt;String, dynamic&gt; meta) {
   if (meta == null) {
-    throw Exception(&quot;Meta data was null&quot;);
+    print(&quot;Meta data was null&quot;);
+    exit(0);
   }
 
   String projectName = meta[&quot;projectname&quot;];
   if (projectName == null || projectName == &quot;&quot;) {
-    throw Exception(&quot;Please enter a unique project name&quot;);
+    print(StackTrace.fromString(
+        &quot;lib&#47;main.dart (package:PlutopolyExtension&#47;main.dart:6:1)&quot;));
+    print(&quot;Please enter a unique project name&quot;);
+
+    exit(0);
   }
 
   List&lt;String&gt; projectNameParts = projectName.split(&quot;.&quot;);
   if (projectNameParts.length != 2) {
-    throw Exception(&quot;Use exactly 1 point (.) in the project name&quot;);
+    print(StackTrace.fromString(
+        &quot;lib&#47;main.dart (package:PlutopolyExtension&#47;main.dart:6:1)&quot;));
+    print(&quot;Use exactly 1 point (.) in the project name&quot;);
+    exit(0);
   }
   if (projectNameParts[0].length &lt; 3) {
-    throw Exception(
-        &quot;Add a author name with atleast 3 characters before the point in your project name&quot;);
+    print(StackTrace.fromString(
+        &quot;lib&#47;main.dart (package:PlutopolyExtension&#47;main.dart:6:1)&quot;));
+    print(
+      &quot;Add a author name with atleast 3 characters before the point in your project name&quot;,
+    );
+    exit(0);
   }
   if (projectNameParts[1].length &lt; 3) {
-    throw Exception(
-        &quot;Add a name with atleast 3 characters after the point in your project name&quot;);
+    print(StackTrace.fromString(
+        &quot;lib&#47;main.dart (package:PlutopolyExtension&#47;main.dart:6:1)&quot;));
+    print(
+      &quot;Add a name with atleast 3 characters after the point in your project name&quot;,
+    );
+    exit(0);
   }
   if (projectNameParts[0] == &quot;filorux&quot;) {
-    throw Exception(
-        &quot;Replace filorux with your own name in your project name&quot;);
+    &#47;&#47; Go to lib&#47;main.dart
+    print(StackTrace.fromString(
+        &quot;lib&#47;main.dart (package:PlutopolyExtension&#47;main.dart:6:1)&quot;));
+    print(
+      &quot;Replace filorux with your own name in your project name.&quot;,
+    );
+    exit(0);
   }
 
   if (meta[&quot;author&quot;] == null || meta[&quot;author&quot;] == &quot;&quot;) {

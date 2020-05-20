@@ -61,26 +61,30 @@
         <li class="section-title">
             <a href="engine_data_map/Tile-class.html#instance-properties">Properties</a>
         </li>
+        <li><a href="engine_data_map/Tile/buyable.html">buyable</a></li>
         <li><a href="engine_data_map/Tile/color.html">color</a></li>
         <li><a href="engine_data_map/Tile/currentRent.html">currentRent</a></li>
+        <li><a href="engine_data_map/Tile/description.html">description</a></li>
         <li><a href="engine_data_map/Tile/housePrice.html">housePrice</a></li>
         <li><a href="engine_data_map/Tile/hyp.html">hyp</a></li>
         <li><a href="engine_data_map/Tile/id.html">id</a></li>
         <li><a href="engine_data_map/Tile/idIndex.html">idIndex</a></li>
         <li><a href="engine_data_map/Tile/idPrefix.html">idPrefix</a></li>
-        <li><a href="engine_data_map/Tile/index.html">index</a></li>
         <li><a href="engine_data_map/Tile/level.html">level</a></li>
+        <li><a href="engine_data_map/Tile/mapIndex.html">mapIndex</a></li>
         <li><a href="engine_data_map/Tile/mortaged.html">mortaged</a></li>
         <li><a href="engine_data_map/Tile/name.html">name</a></li>
         <li><a href="engine_data_map/Tile/owner.html">owner</a></li>
         <li><a href="engine_data_map/Tile/players.html">players</a></li>
         <li><a href="engine_data_map/Tile/price.html">price</a></li>
         <li><a href="engine_data_map/Tile/rent.html">rent</a></li>
+        <li><a href="engine_data_map/Tile/transportationPrice.html">transportationPrice</a></li>
         <li><a href="engine_data_map/Tile/type.html">type</a></li>
         <li class="inherited"><a href="engine_data_map/Tile/hashCode.html">hashCode</a></li>
         <li class="inherited"><a href="engine_data_map/Tile/runtimeType.html">runtimeType</a></li>
     
         <li class="section-title"><a href="engine_data_map/Tile-class.html#instance-methods">Methods</a></li>
+        <li><a href="engine_data_map/Tile/reset.html">reset</a></li>
         <li><a href="engine_data_map/Tile/toJson.html">toJson</a></li>
         <li class="inherited"><a href="engine_data_map/Tile/noSuchMethod.html">noSuchMethod</a></li>
         <li class="inherited"><a href="engine_data_map/Tile/toString.html">toString</a></li>
@@ -112,7 +116,7 @@
           <pre class="language-dart"><code class="language-dart">Player get owner {
   Player owner;
   Game.data.players.forEach((Player player) {
-    if (player.properties.contains(index)) {
+    if (player.properties.contains(mapIndex)) {
       owner = player;
       return;
     }

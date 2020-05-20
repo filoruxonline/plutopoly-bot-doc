@@ -59,6 +59,7 @@
     
     
       <li class="section-title"><a href="engine_data_map/engine_data_map-library.html#properties">Properties</a></li>
+      <li><a href="engine_data_map/defaultMap.html">defaultMap</a></li>
       <li><a href="engine_data_map/denseConfiguration.html">denseConfiguration</a></li>
       <li><a href="engine_data_map/standardConfiguration.html">standardConfiguration</a></li>
     
@@ -80,7 +81,7 @@
 
       <dl class="constructor-summary-list">
         <dt id="Tile" class="callable">
-          <span class="name"><a href="engine_data_map/Tile/Tile.html">Tile</a></span><span class="signature">(<span class="parameter" id="-param-type"><span class="type-annotation"><a href="engine_data_map/TileType-class.html">TileType</a></span> <span class="parameter-name">type</span>, {</span> <span class="parameter" id="-param-color"><span class="type-annotation">int</span> <span class="parameter-name">color</span></span> <span class="parameter" id="-param-idPrefix"><span class="type-annotation">String</span> <span class="parameter-name">idPrefix</span>, </span> <span class="parameter" id="-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span>, </span> <span class="parameter" id="-param-price"><span class="type-annotation">int</span> <span class="parameter-name">price</span></span> <span class="parameter" id="-param-housePrice"><span class="type-annotation">int</span> <span class="parameter-name">housePrice</span></span> <span class="parameter" id="-param-rent"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">rent</span>, </span> <span class="parameter" id="-param-hyp"><span class="type-annotation">int</span> <span class="parameter-name">hyp</span></span> <span class="parameter" id="-param-mortaged"><span class="type-annotation">bool</span> <span class="parameter-name">mortaged</span>: <span class="default-value">false</span>, </span> <span class="parameter" id="-param-idIndex"><span class="type-annotation">int</span> <span class="parameter-name">idIndex</span></span> })</span>
+          <span class="name"><a href="engine_data_map/Tile/Tile.html">Tile</a></span><span class="signature">(<span class="parameter" id="-param-type"><span class="type-annotation"><a href="engine_data_map/TileType-class.html">TileType</a></span> <span class="parameter-name">type</span>, {</span> <span class="parameter" id="-param-color"><span class="type-annotation">int</span> <span class="parameter-name">color</span></span> <span class="parameter" id="-param-idPrefix"><span class="type-annotation">String</span> <span class="parameter-name">idPrefix</span>, </span> <span class="parameter" id="-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span>, </span> <span class="parameter" id="-param-description"><span class="type-annotation">String</span> <span class="parameter-name">description</span>, </span> <span class="parameter" id="-param-price"><span class="type-annotation">int</span> <span class="parameter-name">price</span></span> <span class="parameter" id="-param-housePrice"><span class="type-annotation">int</span> <span class="parameter-name">housePrice</span></span> <span class="parameter" id="-param-rent"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">rent</span>, </span> <span class="parameter" id="-param-hyp"><span class="type-annotation">int</span> <span class="parameter-name">hyp</span></span> <span class="parameter" id="-param-mortaged"><span class="type-annotation">bool</span> <span class="parameter-name">mortaged</span>: <span class="default-value">false</span>, </span> <span class="parameter" id="-param-idIndex"><span class="type-annotation">int</span> <span class="parameter-name">idIndex</span></span> })</span>
         </dt>
         <dd>
           
@@ -99,6 +100,14 @@
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="buyable" class="property">
+          <span class="name"><a href="engine_data_map/Tile/buyable.html">buyable</a></span>
+          <span class="signature">&#8594; bool</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
+</dd>
         <dt id="color" class="property">
           <span class="name"><a href="engine_data_map/Tile/color.html">color</a></span>
           <span class="signature">&#8596; int</span>         
@@ -114,6 +123,14 @@
         <dd>
           
                   <div class="features">read-only</div>
+</dd>
+        <dt id="description" class="property">
+          <span class="name"><a href="engine_data_map/Tile/description.html">description</a></span>
+          <span class="signature">&#8596; String</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read / write</div>
 </dd>
         <dt id="housePrice" class="property">
           <span class="name"><a href="engine_data_map/Tile/housePrice.html">housePrice</a></span>
@@ -155,14 +172,6 @@
           
                   <div class="features">read / write</div>
 </dd>
-        <dt id="index" class="property">
-          <span class="name"><a href="engine_data_map/Tile/index.html">index</a></span>
-          <span class="signature">&#8594; int</span>         
-        </dt>
-        <dd>
-          
-                  <div class="features">read-only</div>
-</dd>
         <dt id="level" class="property">
           <span class="name"><a href="engine_data_map/Tile/level.html">level</a></span>
           <span class="signature">&#8596; int</span>         
@@ -170,6 +179,14 @@
         <dd>
           
                   <div class="features">read / write</div>
+</dd>
+        <dt id="mapIndex" class="property">
+          <span class="name"><a href="engine_data_map/Tile/mapIndex.html">mapIndex</a></span>
+          <span class="signature">&#8594; int</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
 </dd>
         <dt id="mortaged" class="property">
           <span class="name"><a href="engine_data_map/Tile/mortaged.html">mortaged</a></span>
@@ -219,6 +236,14 @@
           
                   <div class="features">read / write</div>
 </dd>
+        <dt id="transportationPrice" class="property">
+          <span class="name"><a href="engine_data_map/Tile/transportationPrice.html">transportationPrice</a></span>
+          <span class="signature">&#8596; int</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read / write</div>
+</dd>
         <dt id="type" class="property">
           <span class="name"><a href="engine_data_map/Tile/type.html">type</a></span>
           <span class="signature">&#8596; <a href="engine_data_map/TileType-class.html">TileType</a></span>         
@@ -249,6 +274,15 @@
     <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
+        <dt id="reset" class="callable">
+          <span class="name"><a href="engine_data_map/Tile/reset.html">reset</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; void</span>
+          </span>
+                  </dt>
+        <dd>
+          
+                  
+</dd>
         <dt id="toJson" class="callable">
           <span class="name"><a href="engine_data_map/Tile/toJson.html">toJson</a></span><span class="signature">(<wbr>)
             <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">String</span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
@@ -309,26 +343,30 @@
       <li class="section-title">
         <a href="engine_data_map/Tile-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="engine_data_map/Tile/buyable.html">buyable</a></li>
       <li><a href="engine_data_map/Tile/color.html">color</a></li>
       <li><a href="engine_data_map/Tile/currentRent.html">currentRent</a></li>
+      <li><a href="engine_data_map/Tile/description.html">description</a></li>
       <li><a href="engine_data_map/Tile/housePrice.html">housePrice</a></li>
       <li><a href="engine_data_map/Tile/hyp.html">hyp</a></li>
       <li><a href="engine_data_map/Tile/id.html">id</a></li>
       <li><a href="engine_data_map/Tile/idIndex.html">idIndex</a></li>
       <li><a href="engine_data_map/Tile/idPrefix.html">idPrefix</a></li>
-      <li><a href="engine_data_map/Tile/index.html">index</a></li>
       <li><a href="engine_data_map/Tile/level.html">level</a></li>
+      <li><a href="engine_data_map/Tile/mapIndex.html">mapIndex</a></li>
       <li><a href="engine_data_map/Tile/mortaged.html">mortaged</a></li>
       <li><a href="engine_data_map/Tile/name.html">name</a></li>
       <li><a href="engine_data_map/Tile/owner.html">owner</a></li>
       <li><a href="engine_data_map/Tile/players.html">players</a></li>
       <li><a href="engine_data_map/Tile/price.html">price</a></li>
       <li><a href="engine_data_map/Tile/rent.html">rent</a></li>
+      <li><a href="engine_data_map/Tile/transportationPrice.html">transportationPrice</a></li>
       <li><a href="engine_data_map/Tile/type.html">type</a></li>
       <li class="inherited"><a href="engine_data_map/Tile/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="engine_data_map/Tile/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="engine_data_map/Tile-class.html#instance-methods">Methods</a></li>
+      <li><a href="engine_data_map/Tile/reset.html">reset</a></li>
       <li><a href="engine_data_map/Tile/toJson.html">toJson</a></li>
       <li class="inherited"><a href="engine_data_map/Tile/noSuchMethod.html">noSuchMethod</a></li>
       <li class="inherited"><a href="engine_data_map/Tile/toString.html">toString</a></li>

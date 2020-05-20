@@ -99,8 +99,7 @@
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">static update(Document snap) {
   if (snap.map[&quot;bot&quot;] ?? true) {
-    if (Game.verbose) print(&quot;== Dropped Data ==&quot;);
-    if (Game.verbose) print(&quot;bot field was true&quot;);
+    if (Game.verbose) print(&quot;== Dropped Data ==\nbot field was true&quot;);
     return;
   }
 
@@ -116,8 +115,7 @@
   }
 
   if (!Game.active) {
-    if (Game.verbose) print(&quot;== Dropped Data ==&quot;);
-    if (Game.verbose) print(&quot;bot was marked inactive&quot;);
+    if (Game.verbose) print(&quot;== Dropped Data ==\nbot was marked inactive&quot;);
     return;
   }
 

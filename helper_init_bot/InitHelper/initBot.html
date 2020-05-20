@@ -95,6 +95,7 @@
       <pre class="language-dart"><code class="language-dart">static initBot(
     String inGamePin, bool inVerbose, Map&lt;String, dynamic&gt; meta) async {
   Game.gameBot = GameBot();
+  bool previouslyInitialized = false;
 
   meta = checkMetaData(meta);
   if (inGamePin == null) {
@@ -114,7 +115,7 @@
   try {
     Firestore.initialize(&quot;playplutopoly&quot;);
   } catch (e) {
-    print(&quot;ERROR during initialization&quot;);
+    print(&quot;Error during initialization&quot;);
     rethrow;
   }
   try {
@@ -129,6 +130,23 @@
         print(&quot;Meta listen value was false, not listening to data.&quot;);
     }
     Document document = await documentReference.get();
+
+    List&lt;int&gt; versionCode =
+        version.split(&quot;.&quot;).map&lt;int&gt;((e) =&gt; int.tryParse(e)).toList();
+
+    String joinVersion = document.map[&quot;version&quot;] ?? &quot;0.0.0&quot;;
+    List&lt;int&gt; joinVersionCode =
+        joinVersion.split(&quot;.&quot;).map&lt;int&gt;((e) =&gt; int.tryParse(e)).toList();
+    if (joinVersionCode.length &gt;= 2 &amp;&amp; versionCode[0] != null) {
+      if (joinVersionCode[0] != versionCode[0] ||
+          joinVersionCode[1] != versionCode[1]) {
+        throw Exception(
+            &quot;The versions are not correct:\nyour version: $version\ngame version: $joinVersion&quot;);
+      }
+    } else {
+      throw Exception(&quot;Couldn&#39;t proces version: $joinVersion&quot;);
+    }
+
     try {
       JsonEncoder encoder = new JsonEncoder.withIndent(&#39;  &#39;);
       String prettyprint = encoder.convert(document.map);
@@ -136,19 +154,25 @@
     } catch (e) {
       if (Game.verbose) print(&quot;Couldn&#39;t pretty print.&quot;);
     }
+
     try {
       Game.data = GameData.fromJson(document.map);
     } catch (e) {
       print(
           &quot;Couldn&#39;t serialize data. Is the json formatted correctly? Are the versions correct?&quot;);
-      rethrow;
+      exit(0);
     }
+    try {
+      previouslyInitialized =
+          document.map[&quot;bots&quot;][Game.projectName][&quot;meta&quot;][&quot;init&quot;] ?? false;
+    } catch (e) {}
   } catch (e) {
     print(&quot;ERROR during connection: Is your gamepin correct?&quot;);
-    rethrow;
+    print(e);
+    exit(0);
   }
 
-  Game.gameBot.onInit();
+  Game.gameBot.onInit(previouslyInitialized);
   Helper.saveGame();
 }</code></pre>
     </section>

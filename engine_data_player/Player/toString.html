@@ -61,11 +61,14 @@
         <li class="section-title">
             <a href="engine_data_player/Player-class.html#instance-properties">Properties</a>
         </li>
+        <li><a href="engine_data_player/Player/ai.html">ai</a></li>
         <li><a href="engine_data_player/Player/code.html">code</a></li>
         <li><a href="engine_data_player/Player/color.html">color</a></li>
         <li><a href="engine_data_player/Player/companies.html">companies</a></li>
         <li><a href="engine_data_player/Player/debt.html">debt</a></li>
         <li><a href="engine_data_player/Player/goojCards.html">goojCards</a></li>
+        <li><a href="engine_data_player/Player/id.html">id</a></li>
+        <li><a href="engine_data_player/Player/index.html">index</a></li>
         <li><a href="engine_data_player/Player/info.html">info</a></li>
         <li><a href="engine_data_player/Player/jailed.html">jailed</a></li>
         <li><a href="engine_data_player/Player/jailTries.html">jailTries</a></li>
@@ -74,17 +77,21 @@
         <li><a href="engine_data_player/Player/moneyHistory.html">moneyHistory</a></li>
         <li><a href="engine_data_player/Player/name.html">name</a></li>
         <li><a href="engine_data_player/Player/position.html">position</a></li>
+        <li><a href="engine_data_player/Player/positionTile.html">positionTile</a></li>
         <li><a href="engine_data_player/Player/properties.html">properties</a></li>
         <li><a href="engine_data_player/Player/stock.html">stock</a></li>
         <li><a href="engine_data_player/Player/trainstations.html">trainstations</a></li>
+        <li><a href="engine_data_player/Player/transtationTiles.html">transtationTiles</a></li>
         <li class="inherited"><a href="engine_data_player/Player/hashCode.html">hashCode</a></li>
         <li class="inherited"><a href="engine_data_player/Player/runtimeType.html">runtimeType</a></li>
     
         <li class="section-title"><a href="engine_data_player/Player-class.html#instance-methods">Methods</a></li>
         <li><a href="engine_data_player/Player/hasAll.html">hasAll</a></li>
+        <li><a href="engine_data_player/Player/hasAllUnmortaged.html">hasAllUnmortaged</a></li>
+        <li><a href="engine_data_player/Player/missing.html">missing</a></li>
         <li><a href="engine_data_player/Player/toJson.html">toJson</a></li>
+        <li><a href="engine_data_player/Player/toString.html">toString</a></li>
         <li class="inherited"><a href="engine_data_player/Player/noSuchMethod.html">noSuchMethod</a></li>
-        <li class="inherited"><a href="engine_data_player/Player/toString.html">toString</a></li>
     
         <li class="section-title inherited"><a href="engine_data_player/Player-class.html#operators">Operators</a></li>
         <li class="inherited"><a href="engine_data_player/Player/operator_equals.html">operator ==</a></li>
@@ -97,14 +104,18 @@
   </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
-      <div>  <div id="external-links" class="btn-group"><a title="View source code" class="source-link" href="https://github.com/dart-lang/sdk/blob/1c9356d8990a2a8c90c66097e20cb2f22e5cc267/sdk/lib/core/object.dart#L99"><i class="material-icons">description</i></a></div>
-<h1><span class="kind-method">toString</span> method</h1></div>
+      <div><h1><span class="kind-method">toString</span> method</h1></div>
 
     <section class="multi-line-signature">
+      <div>
+        <ol class="annotation-list">
+          <li>@override</li>
+        </ol>
+      </div>
       <span class="returntype">String</span>
             <span class="name ">toString</span>
 (<wbr>)
-      <div class="features">inherited</div>
+      <div class="features">override</div>
     </section>
     <section class="desc markdown">
       <p>Returns a string representation of this object.</p>
@@ -112,7 +123,10 @@
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">external String toString();</code></pre>
+      <pre class="language-dart"><code class="language-dart">@override
+String toString() {
+  return &#39;Player(name: $name, money: $money, position: $position, color: $color, properties: $properties, jailed: $jailed, jailTries: $jailTries, goojCards: $goojCards, moneyHistory: $moneyHistory, code: $code, debt: $debt, loans: $loans, ai: $ai)&#39;;
+}</code></pre>
     </section>
 
   </div> <!-- /.main-content -->

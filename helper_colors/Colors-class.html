@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the Colors class from the colors library, for the Dart programming language.">
+  <title>Colors class - colors library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">PlutopolyExtension</a></li>
+    <li><a href="helper_colors/helper_colors-library.html">colors</a></li>
+    <li class="self-crumb">Colors class</li>
+  </ol>
+  <div class="self-name">Colors</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">PlutopolyExtension</a></li>
+      <li><a href="helper_colors/helper_colors-library.html">colors</a></li>
+      <li class="self-crumb">Colors class</li>
+    </ol>
+    
+    <h5>colors library</h5>
+    <ol>
+      <li class="section-title"><a href="helper_colors/helper_colors-library.html#classes">Classes</a></li>
+      <li><a href="helper_colors/Colors-class.html">Colors</a></li>
+      <li><a href="helper_colors/ColorSwatch-class.html">ColorSwatch</a></li>
+      <li><a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></li>
+      <li><a href="helper_colors/MaterialColor-class.html">MaterialColor</a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    </ol>
+  </div>
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1><span class="kind-class">Colors</span> class </h1></div>
+
+    <section class="desc markdown">
+      <p><a href="helper_color/Color-class.html">Color</a> and <a href="helper_colors/ColorSwatch-class.html">ColorSwatch</a> constants which represent Material design's
+<a href="https://material.io/design/color/">color palette</a>.</p>
+<p>Instead of using an absolute color from these palettes, consider using
+<code>Theme.of</code> to obtain the local <code>ThemeData</code> structure, which exposes the
+colors selected for the current theme, such as <code>ThemeData.primaryColor</code> and
+<code>ThemeData.accentColor</code> (among many others).</p>
+<p>Most swatches have colors from 100 to 900 in increments of one hundred, plus
+the color 50. The smaller the number, the more pale the color. The greater
+the number, the darker the color. The accent swatches (e.g. <a href="helper_colors/Colors/redAccent-constant.html">redAccent</a>) only
+have the values 100, 200, 400, and 700.</p>
+<p>In addition, a series of blacks and whites with common opacities are
+available. For example, <a href="helper_colors/Colors/black54-constant.html">black54</a> is a pure black with 54% opacity.</p>
+<p>{@tool snippet}</p>
+<p>To select a specific color from one of the swatches, index into the swatch
+using an integer for the specific color desired, as follows:</p>
+<pre class="language-dart"><code class="language-dart">Color selection = Colors.green[400]; // Selects a mid-range green.
+</code></pre>
+<p>{@end-tool}
+{@tool snippet}</p>
+<p>Each <a href="helper_colors/ColorSwatch-class.html">ColorSwatch</a> constant is a color and can used directly. For example:</p>
+<pre class="language-dart"><code class="language-dart">Container(
+  color: Colors.blue, // same as Colors.blue[500] or Colors.blue.shade500
+)
+</code></pre>
+<p>{@end-tool}</p>
+<h2 id="color-palettes">Color palettes</h2>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.pink.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.pinkAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.red.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.redAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.deepOrange.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.deepOrangeAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.orange.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.orangeAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.amber.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.amberAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.yellow.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.yellowAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.lime.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.limeAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.lightGreen.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.lightGreenAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.green.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.greenAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.teal.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.tealAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.cyan.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.cyanAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.lightBlue.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.lightBlueAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blue.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blueAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.indigo.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.indigoAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.purple.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.purpleAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.deepPurple.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.deepPurpleAccent.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blueGrey.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.brown.png" alt=""></p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.grey.png" alt=""></p>
+<h2 id="blacks-and-whites">Blacks and whites</h2>
+<p>These colors are identified by their transparency. The low transparency
+levels (e.g. <a href="helper_colors/Colors/white12-constant.html">Colors.white12</a> and <a href="helper_colors/Colors/white10-constant.html">Colors.white10</a>) are very hard to see and
+should be avoided in general. They are intended for very subtle effects.</p>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blacks.png" alt="">
+<img src="https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png" alt=""></p>
+<p>The <a href="helper_colors/Colors/transparent-constant.html">Colors.transparent</a> color isn't shown here because it is entirely
+invisible!</p>
+    </section>
+    
+
+
+    <section class="summary offset-anchor inherited" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="hashCode" class="property inherited">
+          <span class="name"><a href="helper_colors/Colors/hashCode.html">hashCode</a></span>
+          <span class="signature">&#8594; int</span>         
+        </dt>
+        <dd class="inherited">
+          The hash code for this object. <a href="helper_colors/Colors/hashCode.html">[...]</a>
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="runtimeType" class="property inherited">
+          <span class="name"><a href="helper_colors/Colors/runtimeType.html">runtimeType</a></span>
+          <span class="signature">&#8594; Type</span>         
+        </dt>
+        <dd class="inherited">
+          A representation of the runtime type of the object.
+                  <div class="features">read-only, inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor inherited" id="instance-methods">
+      <h2>Methods</h2>
+      <dl class="callables">
+        <dt id="noSuchMethod" class="callable inherited">
+          <span class="name"><a href="helper_colors/Colors/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Invoked when a non-existent method or property is accessed. <a href="helper_colors/Colors/noSuchMethod.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+        <dt id="toString" class="callable inherited">
+          <span class="name"><a href="helper_colors/Colors/toString.html">toString</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; String</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Returns a string representation of this object.
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor inherited" id="operators">
+      <h2>Operators</h2>
+      <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+          <span class="name"><a href="helper_colors/Colors/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation">dynamic</span> <span class="parameter-name">other</span></span>)
+            <span class="returntype parameter">&#8594; bool</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          The equality operator. <a href="helper_colors/Colors/operator_equals.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+
+
+    <section class="summary offset-anchor" id="constants">
+      <h2>Constants</h2>
+
+      <dl class="properties">
+        <dt id="accents" class="constant">
+          <span class="name "><a href="helper_colors/Colors/accents-constant.html">accents</a></span>
+          <span class="signature">&#8594; const List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>&gt;</span></span>
+                  </dt>
+        <dd>
+          The material design accent color swatches.
+                  
+  <div>
+            <span class="signature"><code>const &lt;MaterialAccentColor&gt;[redAccent, pinkAccent, purpleAccent, deepPurpleAccent, indigoAccent, blueAccent, lightBlueAccent, cyanAccent, tealAccent, greenAccent, lightGreenAccent, limeAccent, y…</code></span>
+          </div>
+        </dd>
+        <dt id="amber" class="constant">
+          <span class="name "><a href="helper_colors/Colors/amber-constant.html">amber</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The amber primary color and swatch. <a href="helper_colors/Colors/amber-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_amberPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFFFF8E1), 100 : const Color(0xFFFFECB3), 200 : const Color(0xFFFFE082), 300 : const Color(0xFFFFD54F), 400 : const …</code></span>
+          </div>
+        </dd>
+        <dt id="amberAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/amberAccent-constant.html">amberAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The amber accent color and swatch. <a href="helper_colors/Colors/amberAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_amberAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFFFE57F), 200 : const Color(_amberAccentPrimaryValue), 400 : const Color(0xFFFFC400), 700 : const Colo…</code></span>
+          </div>
+        </dd>
+        <dt id="black" class="constant">
+          <span class="name "><a href="helper_colors/Colors/black-constant.html">black</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Completely opaque black. <a href="helper_colors/Colors/black-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0xFF000000)</code></span>
+          </div>
+        </dd>
+        <dt id="black12" class="constant">
+          <span class="name "><a href="helper_colors/Colors/black12-constant.html">black12</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Black with 12% opacity. <a href="helper_colors/Colors/black12-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x1F000000)</code></span>
+          </div>
+        </dd>
+        <dt id="black26" class="constant">
+          <span class="name "><a href="helper_colors/Colors/black26-constant.html">black26</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Black with 26% opacity. <a href="helper_colors/Colors/black26-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x42000000)</code></span>
+          </div>
+        </dd>
+        <dt id="black38" class="constant">
+          <span class="name "><a href="helper_colors/Colors/black38-constant.html">black38</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Black with 38% opacity. <a href="helper_colors/Colors/black38-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x61000000)</code></span>
+          </div>
+        </dd>
+        <dt id="black45" class="constant">
+          <span class="name "><a href="helper_colors/Colors/black45-constant.html">black45</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Black with 45% opacity. <a href="helper_colors/Colors/black45-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x73000000)</code></span>
+          </div>
+        </dd>
+        <dt id="black54" class="constant">
+          <span class="name "><a href="helper_colors/Colors/black54-constant.html">black54</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Black with 54% opacity. <a href="helper_colors/Colors/black54-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x8A000000)</code></span>
+          </div>
+        </dd>
+        <dt id="black87" class="constant">
+          <span class="name "><a href="helper_colors/Colors/black87-constant.html">black87</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Black with 87% opacity. <a href="helper_colors/Colors/black87-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0xDD000000)</code></span>
+          </div>
+        </dd>
+        <dt id="blue" class="constant">
+          <span class="name "><a href="helper_colors/Colors/blue-constant.html">blue</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The blue primary color and swatch. <a href="helper_colors/Colors/blue-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_bluePrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFE3F2FD), 100 : const Color(0xFFBBDEFB), 200 : const Color(0xFF90CAF9), 300 : const Color(0xFF64B5F6), 400 : const C…</code></span>
+          </div>
+        </dd>
+        <dt id="blueAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/blueAccent-constant.html">blueAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The blue accent color and swatch. <a href="helper_colors/Colors/blueAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_blueAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFF82B1FF), 200 : const Color(_blueAccentPrimaryValue), 400 : const Color(0xFF2979FF), 700 : const Color(…</code></span>
+          </div>
+        </dd>
+        <dt id="blueGrey" class="constant">
+          <span class="name "><a href="helper_colors/Colors/blueGrey-constant.html">blueGrey</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The blue-grey primary color and swatch. <a href="helper_colors/Colors/blueGrey-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_blueGreyPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFECEFF1), 100 : const Color(0xFFCFD8DC), 200 : const Color(0xFFB0BEC5), 300 : const Color(0xFF90A4AE), 400 : con…</code></span>
+          </div>
+        </dd>
+        <dt id="brown" class="constant">
+          <span class="name "><a href="helper_colors/Colors/brown-constant.html">brown</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The brown primary color and swatch. <a href="helper_colors/Colors/brown-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_brownPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFEFEBE9), 100 : const Color(0xFFD7CCC8), 200 : const Color(0xFFBCAAA4), 300 : const Color(0xFFA1887F), 400 : const …</code></span>
+          </div>
+        </dd>
+        <dt id="cyan" class="constant">
+          <span class="name "><a href="helper_colors/Colors/cyan-constant.html">cyan</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The cyan primary color and swatch. <a href="helper_colors/Colors/cyan-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_cyanPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFE0F7FA), 100 : const Color(0xFFB2EBF2), 200 : const Color(0xFF80DEEA), 300 : const Color(0xFF4DD0E1), 400 : const C…</code></span>
+          </div>
+        </dd>
+        <dt id="cyanAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/cyanAccent-constant.html">cyanAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The cyan accent color and swatch. <a href="helper_colors/Colors/cyanAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_cyanAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFF84FFFF), 200 : const Color(_cyanAccentPrimaryValue), 400 : const Color(0xFF00E5FF), 700 : const Color(…</code></span>
+          </div>
+        </dd>
+        <dt id="deepOrange" class="constant">
+          <span class="name "><a href="helper_colors/Colors/deepOrange-constant.html">deepOrange</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The deep orange primary color and swatch. <a href="helper_colors/Colors/deepOrange-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_deepOrangePrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFFBE9E7), 100 : const Color(0xFFFFCCBC), 200 : const Color(0xFFFFAB91), 300 : const Color(0xFFFF8A65), 400 : c…</code></span>
+          </div>
+        </dd>
+        <dt id="deepOrangeAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/deepOrangeAccent-constant.html">deepOrangeAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The deep orange accent color and swatch. <a href="helper_colors/Colors/deepOrangeAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_deepOrangeAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFFF9E80), 200 : const Color(_deepOrangeAccentPrimaryValue), 400 : const Color(0xFFFF3D00), 700 : …</code></span>
+          </div>
+        </dd>
+        <dt id="deepPurple" class="constant">
+          <span class="name "><a href="helper_colors/Colors/deepPurple-constant.html">deepPurple</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The deep purple primary color and swatch. <a href="helper_colors/Colors/deepPurple-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_deepPurplePrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFEDE7F6), 100 : const Color(0xFFD1C4E9), 200 : const Color(0xFFB39DDB), 300 : const Color(0xFF9575CD), 400 : c…</code></span>
+          </div>
+        </dd>
+        <dt id="deepPurpleAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/deepPurpleAccent-constant.html">deepPurpleAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The deep purple accent color and swatch. <a href="helper_colors/Colors/deepPurpleAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_deepPurpleAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFB388FF), 200 : const Color(_deepPurpleAccentPrimaryValue), 400 : const Color(0xFF651FFF), 700 : …</code></span>
+          </div>
+        </dd>
+        <dt id="green" class="constant">
+          <span class="name "><a href="helper_colors/Colors/green-constant.html">green</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The green primary color and swatch. <a href="helper_colors/Colors/green-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_greenPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFE8F5E9), 100 : const Color(0xFFC8E6C9), 200 : const Color(0xFFA5D6A7), 300 : const Color(0xFF81C784), 400 : const …</code></span>
+          </div>
+        </dd>
+        <dt id="greenAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/greenAccent-constant.html">greenAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The green accent color and swatch. <a href="helper_colors/Colors/greenAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_greenAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFB9F6CA), 200 : const Color(_greenAccentPrimaryValue), 400 : const Color(0xFF00E676), 700 : const Colo…</code></span>
+          </div>
+        </dd>
+        <dt id="grey" class="constant">
+          <span class="name "><a href="helper_colors/Colors/grey-constant.html">grey</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The grey primary color and swatch. <a href="helper_colors/Colors/grey-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_greyPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFFAFAFA), 100 : const Color(0xFFF5F5F5), 200 : const Color(0xFFEEEEEE), 300 : const Color(0xFFE0E0E0), 350 : const C…</code></span>
+          </div>
+        </dd>
+        <dt id="indigo" class="constant">
+          <span class="name "><a href="helper_colors/Colors/indigo-constant.html">indigo</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The indigo primary color and swatch. <a href="helper_colors/Colors/indigo-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_indigoPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFE8EAF6), 100 : const Color(0xFFC5CAE9), 200 : const Color(0xFF9FA8DA), 300 : const Color(0xFF7986CB), 400 : const…</code></span>
+          </div>
+        </dd>
+        <dt id="indigoAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/indigoAccent-constant.html">indigoAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The indigo accent color and swatch. <a href="helper_colors/Colors/indigoAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_indigoAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFF8C9EFF), 200 : const Color(_indigoAccentPrimaryValue), 400 : const Color(0xFF3D5AFE), 700 : const Co…</code></span>
+          </div>
+        </dd>
+        <dt id="lightBlue" class="constant">
+          <span class="name "><a href="helper_colors/Colors/lightBlue-constant.html">lightBlue</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The light blue primary color and swatch. <a href="helper_colors/Colors/lightBlue-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_lightBluePrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFE1F5FE), 100 : const Color(0xFFB3E5FC), 200 : const Color(0xFF81D4FA), 300 : const Color(0xFF4FC3F7), 400 : co…</code></span>
+          </div>
+        </dd>
+        <dt id="lightBlueAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/lightBlueAccent-constant.html">lightBlueAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The light blue accent swatch. <a href="helper_colors/Colors/lightBlueAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_lightBlueAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFF80D8FF), 200 : const Color(_lightBlueAccentPrimaryValue), 400 : const Color(0xFF00B0FF), 700 : co…</code></span>
+          </div>
+        </dd>
+        <dt id="lightGreen" class="constant">
+          <span class="name "><a href="helper_colors/Colors/lightGreen-constant.html">lightGreen</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The light green primary color and swatch. <a href="helper_colors/Colors/lightGreen-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_lightGreenPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFF1F8E9), 100 : const Color(0xFFDCEDC8), 200 : const Color(0xFFC5E1A5), 300 : const Color(0xFFAED581), 400 : c…</code></span>
+          </div>
+        </dd>
+        <dt id="lightGreenAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/lightGreenAccent-constant.html">lightGreenAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The light green accent color and swatch. <a href="helper_colors/Colors/lightGreenAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_lightGreenAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFCCFF90), 200 : const Color(_lightGreenAccentPrimaryValue), 400 : const Color(0xFF76FF03), 700 : …</code></span>
+          </div>
+        </dd>
+        <dt id="lime" class="constant">
+          <span class="name "><a href="helper_colors/Colors/lime-constant.html">lime</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The lime primary color and swatch. <a href="helper_colors/Colors/lime-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_limePrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFF9FBE7), 100 : const Color(0xFFF0F4C3), 200 : const Color(0xFFE6EE9C), 300 : const Color(0xFFDCE775), 400 : const C…</code></span>
+          </div>
+        </dd>
+        <dt id="limeAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/limeAccent-constant.html">limeAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The lime accent primary color and swatch. <a href="helper_colors/Colors/limeAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_limeAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFF4FF81), 200 : const Color(_limeAccentPrimaryValue), 400 : const Color(0xFFC6FF00), 700 : const Color(…</code></span>
+          </div>
+        </dd>
+        <dt id="orange" class="constant">
+          <span class="name "><a href="helper_colors/Colors/orange-constant.html">orange</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The orange primary color and swatch. <a href="helper_colors/Colors/orange-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_orangePrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFFFF3E0), 100 : const Color(0xFFFFE0B2), 200 : const Color(0xFFFFCC80), 300 : const Color(0xFFFFB74D), 400 : const…</code></span>
+          </div>
+        </dd>
+        <dt id="orangeAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/orangeAccent-constant.html">orangeAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The orange accent color and swatch. <a href="helper_colors/Colors/orangeAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_orangeAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFFFD180), 200 : const Color(_orangeAccentPrimaryValue), 400 : const Color(0xFFFF9100), 700 : const Co…</code></span>
+          </div>
+        </dd>
+        <dt id="pink" class="constant">
+          <span class="name "><a href="helper_colors/Colors/pink-constant.html">pink</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The pink primary color and swatch. <a href="helper_colors/Colors/pink-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_pinkPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFFCE4EC), 100 : const Color(0xFFF8BBD0), 200 : const Color(0xFFF48FB1), 300 : const Color(0xFFF06292), 400 : const C…</code></span>
+          </div>
+        </dd>
+        <dt id="pinkAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/pinkAccent-constant.html">pinkAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The pink accent color swatch. <a href="helper_colors/Colors/pinkAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_pinkAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFFF80AB), 200 : const Color(_pinkAccentPrimaryValue), 400 : const Color(0xFFF50057), 700 : const Color(…</code></span>
+          </div>
+        </dd>
+        <dt id="primaries" class="constant">
+          <span class="name "><a href="helper_colors/Colors/primaries-constant.html">primaries</a></span>
+          <span class="signature">&#8594; const List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>&gt;</span></span>
+                  </dt>
+        <dd>
+          The material design primary color swatches, excluding grey.
+                  
+  <div>
+            <span class="signature"><code>const &lt;MaterialColor&gt;[red, pink, purple, deepPurple, indigo, blue, lightBlue, cyan, teal, green, lightGreen, lime, yellow, amber, orange, deepOrange, brown, blueGrey]</code></span>
+          </div>
+        </dd>
+        <dt id="purple" class="constant">
+          <span class="name "><a href="helper_colors/Colors/purple-constant.html">purple</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The purple primary color and swatch. <a href="helper_colors/Colors/purple-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_purplePrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFF3E5F5), 100 : const Color(0xFFE1BEE7), 200 : const Color(0xFFCE93D8), 300 : const Color(0xFFBA68C8), 400 : const…</code></span>
+          </div>
+        </dd>
+        <dt id="purpleAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/purpleAccent-constant.html">purpleAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The purple accent color and swatch. <a href="helper_colors/Colors/purpleAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_purpleAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFEA80FC), 200 : const Color(_purpleAccentPrimaryValue), 400 : const Color(0xFFD500F9), 700 : const Co…</code></span>
+          </div>
+        </dd>
+        <dt id="red" class="constant">
+          <span class="name "><a href="helper_colors/Colors/red-constant.html">red</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The red primary color and swatch. <a href="helper_colors/Colors/red-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_redPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFFFEBEE), 100 : const Color(0xFFFFCDD2), 200 : const Color(0xFFEF9A9A), 300 : const Color(0xFFE57373), 400 : const Co…</code></span>
+          </div>
+        </dd>
+        <dt id="redAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/redAccent-constant.html">redAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The red accent swatch. <a href="helper_colors/Colors/redAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_redAccentValue, const &lt;int, Color&gt;{100 : const Color(0xFFFF8A80), 200 : const Color(_redAccentValue), 400 : const Color(0xFFFF1744), 700 : const Color(0xFFD50000)})</code></span>
+          </div>
+        </dd>
+        <dt id="teal" class="constant">
+          <span class="name "><a href="helper_colors/Colors/teal-constant.html">teal</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The teal primary color and swatch. <a href="helper_colors/Colors/teal-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_tealPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFE0F2F1), 100 : const Color(0xFFB2DFDB), 200 : const Color(0xFF80CBC4), 300 : const Color(0xFF4DB6AC), 400 : const C…</code></span>
+          </div>
+        </dd>
+        <dt id="tealAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/tealAccent-constant.html">tealAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The teal accent color and swatch. <a href="helper_colors/Colors/tealAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_tealAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFA7FFEB), 200 : const Color(_tealAccentPrimaryValue), 400 : const Color(0xFF1DE9B6), 700 : const Color(…</code></span>
+          </div>
+        </dd>
+        <dt id="transparent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/transparent-constant.html">transparent</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Completely invisible.
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x00000000)</code></span>
+          </div>
+        </dd>
+        <dt id="white" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white-constant.html">white</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          Completely opaque white. <a href="helper_colors/Colors/white-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0xFFFFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="white10" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white10-constant.html">white10</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          White with 10% opacity. <a href="helper_colors/Colors/white10-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x1AFFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="white12" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white12-constant.html">white12</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          White with 12% opacity. <a href="helper_colors/Colors/white12-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x1FFFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="white24" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white24-constant.html">white24</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          White with 24% opacity. <a href="helper_colors/Colors/white24-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x3DFFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="white30" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white30-constant.html">white30</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          White with 30% opacity. <a href="helper_colors/Colors/white30-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x4DFFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="white38" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white38-constant.html">white38</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          White with 38% opacity. <a href="helper_colors/Colors/white38-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x62FFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="white54" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white54-constant.html">white54</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          White with 54% opacity. <a href="helper_colors/Colors/white54-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x8AFFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="white60" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white60-constant.html">white60</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          White with 60% opacity. <a href="helper_colors/Colors/white60-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0x99FFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="white70" class="constant">
+          <span class="name "><a href="helper_colors/Colors/white70-constant.html">white70</a></span>
+          <span class="signature">&#8594; const <a href="helper_color/Color-class.html">Color</a></span>
+                  </dt>
+        <dd>
+          White with 70% opacity. <a href="helper_colors/Colors/white70-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_color/Color/Color.html">Color</a>(0xB3FFFFFF)</code></span>
+          </div>
+        </dd>
+        <dt id="yellow" class="constant">
+          <span class="name "><a href="helper_colors/Colors/yellow-constant.html">yellow</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialColor-class.html">MaterialColor</a></span>
+                  </dt>
+        <dd>
+          The yellow primary color and swatch. <a href="helper_colors/Colors/yellow-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialColor/MaterialColor.html">MaterialColor</a>(_yellowPrimaryValue, const &lt;int, Color&gt;{50 : const Color(0xFFFFFDE7), 100 : const Color(0xFFFFF9C4), 200 : const Color(0xFFFFF59D), 300 : const Color(0xFFFFF176), 400 : const…</code></span>
+          </div>
+        </dd>
+        <dt id="yellowAccent" class="constant">
+          <span class="name "><a href="helper_colors/Colors/yellowAccent-constant.html">yellowAccent</a></span>
+          <span class="signature">&#8594; const <a href="helper_colors/MaterialAccentColor-class.html">MaterialAccentColor</a></span>
+                  </dt>
+        <dd>
+          The yellow accent color and swatch. <a href="helper_colors/Colors/yellowAccent-constant.html">[...]</a>
+                  
+  <div>
+            <span class="signature"><code>const <a href="helper_colors/MaterialAccentColor/MaterialAccentColor.html">MaterialAccentColor</a>(_yellowAccentPrimaryValue, const &lt;int, Color&gt;{100 : const Color(0xFFFFFF8D), 200 : const Color(_yellowAccentPrimaryValue), 400 : const Color(0xFFFFEA00), 700 : const Co…</code></span>
+          </div>
+        </dd>
+      </dl>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+    <ol>
+    
+    
+      <li class="section-title inherited">
+        <a href="helper_colors/Colors-class.html#instance-properties">Properties</a>
+      </li>
+      <li class="inherited"><a href="helper_colors/Colors/hashCode.html">hashCode</a></li>
+      <li class="inherited"><a href="helper_colors/Colors/runtimeType.html">runtimeType</a></li>
+    
+      <li class="section-title inherited"><a href="helper_colors/Colors-class.html#instance-methods">Methods</a></li>
+      <li class="inherited"><a href="helper_colors/Colors/noSuchMethod.html">noSuchMethod</a></li>
+      <li class="inherited"><a href="helper_colors/Colors/toString.html">toString</a></li>
+    
+      <li class="section-title inherited"><a href="helper_colors/Colors-class.html#operators">Operators</a></li>
+      <li class="inherited"><a href="helper_colors/Colors/operator_equals.html">operator ==</a></li>
+    
+    
+    
+      <li class="section-title"><a href="helper_colors/Colors-class.html#constants">Constants</a></li>
+      <li><a href="helper_colors/Colors/accents-constant.html">accents</a></li>
+      <li><a href="helper_colors/Colors/amber-constant.html">amber</a></li>
+      <li><a href="helper_colors/Colors/amberAccent-constant.html">amberAccent</a></li>
+      <li><a href="helper_colors/Colors/black-constant.html">black</a></li>
+      <li><a href="helper_colors/Colors/black12-constant.html">black12</a></li>
+      <li><a href="helper_colors/Colors/black26-constant.html">black26</a></li>
+      <li><a href="helper_colors/Colors/black38-constant.html">black38</a></li>
+      <li><a href="helper_colors/Colors/black45-constant.html">black45</a></li>
+      <li><a href="helper_colors/Colors/black54-constant.html">black54</a></li>
+      <li><a href="helper_colors/Colors/black87-constant.html">black87</a></li>
+      <li><a href="helper_colors/Colors/blue-constant.html">blue</a></li>
+      <li><a href="helper_colors/Colors/blueAccent-constant.html">blueAccent</a></li>
+      <li><a href="helper_colors/Colors/blueGrey-constant.html">blueGrey</a></li>
+      <li><a href="helper_colors/Colors/brown-constant.html">brown</a></li>
+      <li><a href="helper_colors/Colors/cyan-constant.html">cyan</a></li>
+      <li><a href="helper_colors/Colors/cyanAccent-constant.html">cyanAccent</a></li>
+      <li><a href="helper_colors/Colors/deepOrange-constant.html">deepOrange</a></li>
+      <li><a href="helper_colors/Colors/deepOrangeAccent-constant.html">deepOrangeAccent</a></li>
+      <li><a href="helper_colors/Colors/deepPurple-constant.html">deepPurple</a></li>
+      <li><a href="helper_colors/Colors/deepPurpleAccent-constant.html">deepPurpleAccent</a></li>
+      <li><a href="helper_colors/Colors/green-constant.html">green</a></li>
+      <li><a href="helper_colors/Colors/greenAccent-constant.html">greenAccent</a></li>
+      <li><a href="helper_colors/Colors/grey-constant.html">grey</a></li>
+      <li><a href="helper_colors/Colors/indigo-constant.html">indigo</a></li>
+      <li><a href="helper_colors/Colors/indigoAccent-constant.html">indigoAccent</a></li>
+      <li><a href="helper_colors/Colors/lightBlue-constant.html">lightBlue</a></li>
+      <li><a href="helper_colors/Colors/lightBlueAccent-constant.html">lightBlueAccent</a></li>
+      <li><a href="helper_colors/Colors/lightGreen-constant.html">lightGreen</a></li>
+      <li><a href="helper_colors/Colors/lightGreenAccent-constant.html">lightGreenAccent</a></li>
+      <li><a href="helper_colors/Colors/lime-constant.html">lime</a></li>
+      <li><a href="helper_colors/Colors/limeAccent-constant.html">limeAccent</a></li>
+      <li><a href="helper_colors/Colors/orange-constant.html">orange</a></li>
+      <li><a href="helper_colors/Colors/orangeAccent-constant.html">orangeAccent</a></li>
+      <li><a href="helper_colors/Colors/pink-constant.html">pink</a></li>
+      <li><a href="helper_colors/Colors/pinkAccent-constant.html">pinkAccent</a></li>
+      <li><a href="helper_colors/Colors/primaries-constant.html">primaries</a></li>
+      <li><a href="helper_colors/Colors/purple-constant.html">purple</a></li>
+      <li><a href="helper_colors/Colors/purpleAccent-constant.html">purpleAccent</a></li>
+      <li><a href="helper_colors/Colors/red-constant.html">red</a></li>
+      <li><a href="helper_colors/Colors/redAccent-constant.html">redAccent</a></li>
+      <li><a href="helper_colors/Colors/teal-constant.html">teal</a></li>
+      <li><a href="helper_colors/Colors/tealAccent-constant.html">tealAccent</a></li>
+      <li><a href="helper_colors/Colors/transparent-constant.html">transparent</a></li>
+      <li><a href="helper_colors/Colors/white-constant.html">white</a></li>
+      <li><a href="helper_colors/Colors/white10-constant.html">white10</a></li>
+      <li><a href="helper_colors/Colors/white12-constant.html">white12</a></li>
+      <li><a href="helper_colors/Colors/white24-constant.html">white24</a></li>
+      <li><a href="helper_colors/Colors/white30-constant.html">white30</a></li>
+      <li><a href="helper_colors/Colors/white38-constant.html">white38</a></li>
+      <li><a href="helper_colors/Colors/white54-constant.html">white54</a></li>
+      <li><a href="helper_colors/Colors/white60-constant.html">white60</a></li>
+      <li><a href="helper_colors/Colors/white70-constant.html">white70</a></li>
+      <li><a href="helper_colors/Colors/yellow-constant.html">yellow</a></li>
+      <li><a href="helper_colors/Colors/yellowAccent-constant.html">yellowAccent</a></li>
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    PlutopolyExtension
+      0.0.0-unknown
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>

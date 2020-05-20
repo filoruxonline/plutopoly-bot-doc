@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the deal method from the CoreActions class, for the Dart programming language.">
+  <title>deal method - CoreActions class - core_actions library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">PlutopolyExtension</a></li>
+    <li><a href="engine_core_actions/engine_core_actions-library.html">core_actions</a></li>
+    <li><a href="engine_core_actions/CoreActions-class.html">CoreActions</a></li>
+    <li class="self-crumb">deal method</li>
+  </ol>
+  <div class="self-name">deal</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">PlutopolyExtension</a></li>
+      <li><a href="engine_core_actions/engine_core_actions-library.html">core_actions</a></li>
+      <li><a href="engine_core_actions/CoreActions-class.html">CoreActions</a></li>
+      <li class="self-crumb">deal method</li>
+    </ol>
+    
+    <h5>CoreActions class</h5>
+    <ol>
+    
+        <li class="section-title"><a href="engine_core_actions/CoreActions-class.html#constructors">Constructors</a></li>
+        <li><a href="engine_core_actions/CoreActions/CoreActions.html">CoreActions</a></li>
+    
+        <li class="section-title">
+            <a href="engine_core_actions/CoreActions-class.html#instance-properties">Properties</a>
+        </li>
+        <li><a href="engine_core_actions/CoreActions/data.html">data</a></li>
+        <li class="inherited"><a href="engine_core_actions/CoreActions/hashCode.html">hashCode</a></li>
+        <li class="inherited"><a href="engine_core_actions/CoreActions/runtimeType.html">runtimeType</a></li>
+    
+        <li class="section-title"><a href="engine_core_actions/CoreActions-class.html#instance-methods">Methods</a></li>
+        <li><a href="engine_core_actions/CoreActions/buy.html">buy</a></li>
+        <li><a href="engine_core_actions/CoreActions/clearPot.html">clearPot</a></li>
+        <li><a href="engine_core_actions/CoreActions/deal.html">deal</a></li>
+        <li><a href="engine_core_actions/CoreActions/mortage.html">mortage</a></li>
+        <li><a href="engine_core_actions/CoreActions/pay.html">pay</a></li>
+        <li><a href="engine_core_actions/CoreActions/payRent.html">payRent</a></li>
+        <li class="inherited"><a href="engine_core_actions/CoreActions/noSuchMethod.html">noSuchMethod</a></li>
+        <li class="inherited"><a href="engine_core_actions/CoreActions/toString.html">toString</a></li>
+    
+        <li class="section-title inherited"><a href="engine_core_actions/CoreActions-class.html#operators">Operators</a></li>
+        <li class="inherited"><a href="engine_core_actions/CoreActions/operator_equals.html">operator ==</a></li>
+    
+    
+    
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1><span class="kind-method">deal</span> method</h1></div>
+
+    <section class="multi-line-signature">
+      <span class="returntype"><a href="engine_core_actions/Alert-class.html">Alert</a></span>
+            <span class="name ">deal</span>
+(<wbr>{<span class="parameter" id="deal-param-payAmount"><span class="type-annotation">int</span> <span class="parameter-name">payAmount</span>: <span class="default-value">0</span></span> <span class="parameter" id="deal-param-payProperties"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">payProperties</span>: <span class="default-value">const <int>[]</span>, </span> <span class="parameter" id="deal-param-receiveProperties"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span> <span class="parameter-name">receiveProperties</span>: <span class="default-value">const <int>[]</span>, </span> <span class="parameter" id="deal-param-dealer"><span class="type-annotation">int</span> <span class="parameter-name">dealer</span></span> })
+      
+    </section>
+    
+    <section class="summary source-code" id="source">
+      <h2><span>Implementation</span></h2>
+      <pre class="language-dart"><code class="language-dart">Alert deal({
+  int payAmount: 0,
+  List&lt;int&gt; payProperties: const &lt;int&gt;[],
+  List&lt;int&gt; receiveProperties: const &lt;int&gt;[],
+  int dealer,
+}) {
+  if (payAmount != null) {
+    Alert alert = pay(PayType.pay, payAmount, receiver: dealer);
+    if (alert != null) {
+      return alert;
+    }
+  }
+  if (payProperties != null) {
+    for (int i = 0; i &lt; payProperties.length | 0; i++) {
+      data.player.properties.remove(payProperties[i]);
+      data.players[dealer].properties.add(payProperties[i]);
+    }
+  }
+  if (receiveProperties != null) {
+    for (int i = 0; i &lt; receiveProperties.length; i++) {
+      data.players[dealer].properties.remove(receiveProperties[i]);
+      data.player.properties.add(receiveProperties[i]);
+    }
+  }
+  data.player.properties.sort();
+  data.players[dealer].properties.sort();
+  Game.save();
+  return null;
+}</code></pre>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    PlutopolyExtension
+      0.0.0-unknown
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>

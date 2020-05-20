@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the operator == method from the HSLColor class, for the Dart programming language.">
+  <title>operator == method - HSLColor class - color library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="../..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">PlutopolyExtension</a></li>
+    <li><a href="helper_color/helper_color-library.html">color</a></li>
+    <li><a href="helper_color/HSLColor-class.html">HSLColor</a></li>
+    <li class="self-crumb">operator == method</li>
+  </ol>
+  <div class="self-name">operator ==</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">PlutopolyExtension</a></li>
+      <li><a href="helper_color/helper_color-library.html">color</a></li>
+      <li><a href="helper_color/HSLColor-class.html">HSLColor</a></li>
+      <li class="self-crumb">operator == method</li>
+    </ol>
+    
+    <h5>HSLColor class</h5>
+    <ol>
+    
+        <li class="section-title"><a href="helper_color/HSLColor-class.html#constructors">Constructors</a></li>
+        <li><a href="helper_color/HSLColor/HSLColor.fromAHSL.html">fromAHSL</a></li>
+        <li><a href="helper_color/HSLColor/HSLColor.fromColor.html">fromColor</a></li>
+    
+        <li class="section-title">
+            <a href="helper_color/HSLColor-class.html#instance-properties">Properties</a>
+        </li>
+        <li><a href="helper_color/HSLColor/alpha.html">alpha</a></li>
+        <li><a href="helper_color/HSLColor/hue.html">hue</a></li>
+        <li><a href="helper_color/HSLColor/lightness.html">lightness</a></li>
+        <li><a href="helper_color/HSLColor/saturation.html">saturation</a></li>
+        <li class="inherited"><a href="helper_color/HSLColor/hashCode.html">hashCode</a></li>
+        <li class="inherited"><a href="helper_color/HSLColor/runtimeType.html">runtimeType</a></li>
+    
+        <li class="section-title"><a href="helper_color/HSLColor-class.html#instance-methods">Methods</a></li>
+        <li><a href="helper_color/HSLColor/toColor.html">toColor</a></li>
+        <li><a href="helper_color/HSLColor/withAlpha.html">withAlpha</a></li>
+        <li><a href="helper_color/HSLColor/withHue.html">withHue</a></li>
+        <li><a href="helper_color/HSLColor/withLightness.html">withLightness</a></li>
+        <li><a href="helper_color/HSLColor/withSaturation.html">withSaturation</a></li>
+        <li class="inherited"><a href="helper_color/HSLColor/noSuchMethod.html">noSuchMethod</a></li>
+        <li class="inherited"><a href="helper_color/HSLColor/toString.html">toString</a></li>
+    
+        <li class="section-title"><a href="helper_color/HSLColor-class.html#operators">Operators</a></li>
+        <li><a href="helper_color/HSLColor/operator_equals.html">operator ==</a></li>
+    
+    
+    
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1><span class="kind-method">operator ==</span> method</h1></div>
+
+    <section class="multi-line-signature">
+      <div>
+        <ol class="annotation-list">
+          <li>@override</li>
+        </ol>
+      </div>
+      <span class="returntype">bool</span>
+            <span class="name ">operator ==</span>
+(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation">Object</span> <span class="parameter-name">other</span></span>)
+      <div class="features">override</div>
+    </section>
+    <section class="desc markdown">
+      <p>Linearly interpolate between two HSLColors.</p>
+<p>The colors are interpolated by interpolating the <a href="helper_color/HSLColor/alpha.html">alpha</a>, <a href="helper_color/HSLColor/hue.html">hue</a>,
+<a href="helper_color/HSLColor/saturation.html">saturation</a>, and <a href="helper_color/HSLColor/lightness.html">lightness</a> channels separately, which usually leads to
+a more pleasing effect than <code>Color.lerp</code> (which interpolates the red,
+green, and blue channels separately).</p>
+<p>If either color is null, this function linearly interpolates from a
+transparent instance of the other color. This is usually preferable to
+interpolating from <a href="helper_colors/Colors/transparent-constant.html">Colors.transparent</a> (<code>const Color(0x00000000)</code>) since
+that will interpolate from a transparent red and cycle through the hues to
+match the target color, regardless of what that color's hue is.</p>
+<p>The <code>t</code> argument represents position on the timeline, with 0.0 meaning
+that the interpolation has not started, returning <code>a</code> (or something
+equivalent to <code>a</code>), 1.0 meaning that the interpolation has finished,
+returning <code>b</code> (or something equivalent to <code>b</code>), and values between them
+meaning that the interpolation is at the relevant point on the timeline
+between <code>a</code> and <code>b</code>. The interpolation can be extrapolated beyond 0.0 and
+1.0, so negative values and values greater than 1.0 are valid
+(and can easily be generated by curves such as <code>Curves.elasticInOut</code>).</p>
+<p>Values outside of the valid range for each channel will be clamped.</p>
+<p>Values for <code>t</code> are usually obtained from an <code>Animation&lt;double&gt;</code>, such as
+an <code>AnimationController</code>.</p>
+    </section>
+    
+    <section class="summary source-code" id="source">
+      <h2><span>Implementation</span></h2>
+      <pre class="language-dart"><code class="language-dart">@override
+bool operator ==(Object other) {
+  if (identical(this, other)) return true;
+  return other is HSLColor &amp;&amp;
+      other.alpha == alpha &amp;&amp;
+      other.hue == hue &amp;&amp;
+      other.saturation == saturation &amp;&amp;
+      other.lightness == lightness;
+}</code></pre>
+    </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    PlutopolyExtension
+      0.0.0-unknown
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>

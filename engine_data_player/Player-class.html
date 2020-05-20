@@ -74,7 +74,7 @@
 
       <dl class="constructor-summary-list">
         <dt id="Player" class="callable">
-          <span class="name"><a href="engine_data_player/Player/Player.html">Player</a></span><span class="signature">({<span class="parameter" id="-param-money"><span class="type-annotation">double</span> <span class="parameter-name">money</span>: <span class="default-value">0</span>, </span> <span class="parameter" id="-param-color"><span class="type-annotation">int</span> <span class="parameter-name">color</span>: <span class="default-value">9688</span></span> <span class="parameter" id="-param-position"><span class="type-annotation">int</span> <span class="parameter-name">position</span>: <span class="default-value">0</span></span> <span class="parameter" id="-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span>, </span> <span class="parameter" id="-param-code"><span class="type-annotation">int</span> <span class="parameter-name">code</span></span> })</span>
+          <span class="name"><a href="engine_data_player/Player/Player.html">Player</a></span><span class="signature">({<span class="parameter" id="-param-money"><span class="type-annotation">double</span> <span class="parameter-name">money</span>: <span class="default-value">0</span>, </span> <span class="parameter" id="-param-color"><span class="type-annotation">int</span> <span class="parameter-name">color</span>: <span class="default-value">9688</span>, </span> <span class="parameter" id="-param-position"><span class="type-annotation">int</span> <span class="parameter-name">position</span>: <span class="default-value">0</span>, </span> <span class="parameter" id="-param-name"><span class="type-annotation">String</span> <span class="parameter-name">name</span>, </span> <span class="parameter" id="-param-code"><span class="type-annotation">int</span> <span class="parameter-name">code</span>, </span> <span class="parameter" id="-param-ai"><span class="type-annotation"><a href="engine_ai_ai/AI-class.html">AI</a></span> <span class="parameter-name">ai</span></span> })</span>
         </dt>
         <dd>
           
@@ -93,6 +93,14 @@
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="ai" class="property">
+          <span class="name"><a href="engine_data_player/Player/ai.html">ai</a></span>
+          <span class="signature">&#8596; <a href="engine_ai_ai/AI-class.html">AI</a></span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read / write</div>
+</dd>
         <dt id="code" class="property">
           <span class="name"><a href="engine_data_player/Player/code.html">code</a></span>
           <span class="signature">&#8596; int</span>         
@@ -133,6 +141,22 @@
           
                   <div class="features">read / write</div>
 </dd>
+        <dt id="id" class="property">
+          <span class="name"><a href="engine_data_player/Player/id.html">id</a></span>
+          <span class="signature">&#8594; int</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="index" class="property">
+          <span class="name"><a href="engine_data_player/Player/index.html">index</a></span>
+          <span class="signature">&#8594; int</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
+</dd>
         <dt id="info" class="property">
           <span class="name"><a href="engine_data_player/Player/info.html">info</a></span>
           <span class="signature">&#8596; Map<span class="signature">&lt;<wbr><span class="type-parameter">int</span>, <span class="type-parameter">List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="engine_data_info/UpdateInfo-class.html">UpdateInfo</a></span>&gt;</span></span>&gt;</span></span>         
@@ -159,7 +183,7 @@
 </dd>
         <dt id="loans" class="property">
           <span class="name"><a href="engine_data_player/Player/loans.html">loans</a></span>
-          <span class="signature">&#8596; List</span>         
+          <span class="signature">&#8596; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="engine_extensions_bank_data_loan/Contract-class.html">Contract</a></span>&gt;</span></span>         
         </dt>
         <dd>
           
@@ -197,6 +221,14 @@
           
                   <div class="features">read / write</div>
 </dd>
+        <dt id="positionTile" class="property">
+          <span class="name"><a href="engine_data_player/Player/positionTile.html">positionTile</a></span>
+          <span class="signature">&#8594; <a href="engine_data_map/Tile-class.html">Tile</a></span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
+</dd>
         <dt id="properties" class="property">
           <span class="name"><a href="engine_data_player/Player/properties.html">properties</a></span>
           <span class="signature">&#8596; List<span class="signature">&lt;<wbr><span class="type-parameter">int</span>&gt;</span></span>         
@@ -216,6 +248,14 @@
         <dt id="trainstations" class="property">
           <span class="name"><a href="engine_data_player/Player/trainstations.html">trainstations</a></span>
           <span class="signature">&#8594; int</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="transtationTiles" class="property">
+          <span class="name"><a href="engine_data_player/Player/transtationTiles.html">transtationTiles</a></span>
+          <span class="signature">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter"><a href="engine_data_map/Tile-class.html">Tile</a></span>&gt;</span></span>         
         </dt>
         <dd>
           
@@ -252,6 +292,24 @@
           
                   
 </dd>
+        <dt id="hasAllUnmortaged" class="callable">
+          <span class="name"><a href="engine_data_player/Player/hasAllUnmortaged.html">hasAllUnmortaged</a></span><span class="signature">(<wbr><span class="parameter" id="hasAllUnmortaged-param-idPrefix"><span class="type-annotation">String</span> <span class="parameter-name">idPrefix</span></span>)
+            <span class="returntype parameter">&#8594; bool</span>
+          </span>
+                  </dt>
+        <dd>
+          
+                  
+</dd>
+        <dt id="missing" class="callable">
+          <span class="name"><a href="engine_data_player/Player/missing.html">missing</a></span><span class="signature">(<wbr><span class="parameter" id="missing-param-idPrefix"><span class="type-annotation">String</span> <span class="parameter-name">idPrefix</span></span>)
+            <span class="returntype parameter">&#8594; int</span>
+          </span>
+                  </dt>
+        <dd>
+          
+                  
+</dd>
         <dt id="toJson" class="callable">
           <span class="name"><a href="engine_data_player/Player/toJson.html">toJson</a></span><span class="signature">(<wbr>)
             <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">String</span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
@@ -261,6 +319,15 @@
           
                   
 </dd>
+        <dt id="toString" class="callable">
+          <span class="name"><a href="engine_data_player/Player/toString.html">toString</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; String</span>
+          </span>
+                  </dt>
+        <dd>
+          Returns a string representation of this object.
+                  <div class="features">override</div>
+</dd>
         <dt id="noSuchMethod" class="callable inherited">
           <span class="name"><a href="engine_data_player/Player/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
             <span class="returntype parameter">&#8594; dynamic</span>
@@ -268,15 +335,6 @@
                   </dt>
         <dd class="inherited">
           Invoked when a non-existent method or property is accessed. <a href="engine_data_player/Player/noSuchMethod.html">[...]</a>
-                  <div class="features">inherited</div>
-</dd>
-        <dt id="toString" class="callable inherited">
-          <span class="name"><a href="engine_data_player/Player/toString.html">toString</a></span><span class="signature">(<wbr>)
-            <span class="returntype parameter">&#8594; String</span>
-          </span>
-                  </dt>
-        <dd class="inherited">
-          Returns a string representation of this object.
                   <div class="features">inherited</div>
 </dd>
       </dl>
@@ -312,11 +370,14 @@
       <li class="section-title">
         <a href="engine_data_player/Player-class.html#instance-properties">Properties</a>
       </li>
+      <li><a href="engine_data_player/Player/ai.html">ai</a></li>
       <li><a href="engine_data_player/Player/code.html">code</a></li>
       <li><a href="engine_data_player/Player/color.html">color</a></li>
       <li><a href="engine_data_player/Player/companies.html">companies</a></li>
       <li><a href="engine_data_player/Player/debt.html">debt</a></li>
       <li><a href="engine_data_player/Player/goojCards.html">goojCards</a></li>
+      <li><a href="engine_data_player/Player/id.html">id</a></li>
+      <li><a href="engine_data_player/Player/index.html">index</a></li>
       <li><a href="engine_data_player/Player/info.html">info</a></li>
       <li><a href="engine_data_player/Player/jailed.html">jailed</a></li>
       <li><a href="engine_data_player/Player/jailTries.html">jailTries</a></li>
@@ -325,17 +386,21 @@
       <li><a href="engine_data_player/Player/moneyHistory.html">moneyHistory</a></li>
       <li><a href="engine_data_player/Player/name.html">name</a></li>
       <li><a href="engine_data_player/Player/position.html">position</a></li>
+      <li><a href="engine_data_player/Player/positionTile.html">positionTile</a></li>
       <li><a href="engine_data_player/Player/properties.html">properties</a></li>
       <li><a href="engine_data_player/Player/stock.html">stock</a></li>
       <li><a href="engine_data_player/Player/trainstations.html">trainstations</a></li>
+      <li><a href="engine_data_player/Player/transtationTiles.html">transtationTiles</a></li>
       <li class="inherited"><a href="engine_data_player/Player/hashCode.html">hashCode</a></li>
       <li class="inherited"><a href="engine_data_player/Player/runtimeType.html">runtimeType</a></li>
     
       <li class="section-title"><a href="engine_data_player/Player-class.html#instance-methods">Methods</a></li>
       <li><a href="engine_data_player/Player/hasAll.html">hasAll</a></li>
+      <li><a href="engine_data_player/Player/hasAllUnmortaged.html">hasAllUnmortaged</a></li>
+      <li><a href="engine_data_player/Player/missing.html">missing</a></li>
       <li><a href="engine_data_player/Player/toJson.html">toJson</a></li>
+      <li><a href="engine_data_player/Player/toString.html">toString</a></li>
       <li class="inherited"><a href="engine_data_player/Player/noSuchMethod.html">noSuchMethod</a></li>
-      <li class="inherited"><a href="engine_data_player/Player/toString.html">toString</a></li>
     
       <li class="section-title inherited"><a href="engine_data_player/Player-class.html#operators">Operators</a></li>
       <li class="inherited"><a href="engine_data_player/Player/operator_equals.html">operator ==</a></li>
